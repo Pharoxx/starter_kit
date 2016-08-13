@@ -1,0 +1,57 @@
+// Media Query Mixins
+@mixin desktop
+	@media screen and (min-width: $desktop_view_size)
+		@content
+
+@mixin tablet
+	@media screen and (min-width: $tablet_view_size) and (max-width: $desktop_view_size)
+		@content
+    
+@mixin mobile
+	@media screen and (max-width: $mobile_view_size)
+		@content
+
+@mixin tablet_and_mobile
+	@media screen and (max-width: $desktop_view_size)
+		@content
+
+@mixin mq($key, $desktop_propery, $tablet_property, $mobile_property)
+	@media screen and (min-width: $desktop_view_size)
+		#{$key}: #{$desktop_propery}
+	@media screen and (min-width: $tablet_view_size) and (max-width: $desktop_view_size)
+		#{$key}: #{$tablet_property}
+	@media screen and (max-width: $mobile_view_size)
+		#{$key}: #{$mobile_property}
+
+// Helper Mixins
+@mixin autoprefix($key, $value)
+	-webkit-#{$key}: #{$value}
+	-ms-#{$key}: #{$value}
+	-moz-#{$key}: #{$value}
+	-o-#{$key}: #{$value}
+	#{$key}: #{$value}
+
+@mixin clearfix
+	@extend %clearfix
+
+@mixin trans
+	@extend %transition
+
+@mixin middle($dir)
+	@if $dir == 'top'
+		top: 50%
+		+autoprefix('transform', 'translateY(-50%)')
+	@else
+		bottom: 50%
+		+autoprefix('transform', 'translateY(50%)')
+
+// Placeholders
+%clearfix
+	&:after
+		display: block
+		content: ' '
+		clear: both
+
+%transition
+	transition: all 200ms ease-out
+

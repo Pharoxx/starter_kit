@@ -1,0 +1,32 @@
+{
+  "name": "oxx_starter_kit",
+  "version": "1.0.0",
+  "description": "Starter kit for web projects",
+  "main": "index.html",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pharoxx/starter_kit.git"
+  },
+  "keywords": [
+    "Starter",
+    "Kit"
+  ],
+  "author": "Yakir Reznik",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Pharoxx/starter_kit/issues"
+  },
+  "homepage": "https://github.com/Pharoxx/starter_kit#readme",
+  "devDependencies": {
+    "autoprefixer-core": "^6.0.1",
+    "grunt": "^1.0.1",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^1.2.0",
+    "grunt-sass-globbing": "^1.5.1",
+    "load-grunt-tasks": "^3.5.0"
+  }
+}
